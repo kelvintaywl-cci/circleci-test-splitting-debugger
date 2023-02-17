@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  build-image:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - setup_remote_docker
+      - checkout
+      - run:
+          name: Build Docker image
+          command: |
+            export PYTHON_VERSION=$(cat .python-version)
+            docker image build --build-arg "python_version=${PYTHON_VERSION}" --tag kelvintaywlcci/test-splitting-debugger .
+
+workflows:
+  on-commit:
+    jobs:
+      - build-image
