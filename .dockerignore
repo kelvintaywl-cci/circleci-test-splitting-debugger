@@ -1,0 +1,5 @@
+.python-version
+README.md
+.git
+Dockerfile
+.env*

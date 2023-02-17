@@ -1,0 +1,6 @@
+cffi==1.15.1; python_version >= "3.8" and python_version < "3.12"
+mip==1.15.0; python_version >= "3.8" and python_version < "3.12"
+numpy==1.24.2; python_version >= "3.8" and python_version < "3.12"
+prtpy==0.8.2; python_version >= "3.8"
+pycparser==2.21; python_version >= "3.8" and python_full_version < "3.0.0" and python_version < "3.12" or python_version >= "3.8" and python_version < "3.12" and python_full_version >= "3.4.0"
+scipy==1.10.0; python_version >= "3.8" and python_version < "3.12"
