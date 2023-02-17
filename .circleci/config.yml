@@ -11,7 +11,15 @@ jobs:
           name: Build Docker image
           command: |
             export PYTHON_VERSION=$(cat .python-version)
-            docker image build --build-arg "python_version=${PYTHON_VERSION}" --tag kelvintaywlcci/test-splitting-debugger .
+            docker image build --build-arg "python_version=${PYTHON_VERSION}" --tag kelvintaywl/test-splitting-debugger:latest .
+      - run:
+          name: Login to Docker Hub
+          command: |
+            echo $DOCKER_PASSWORD | docker login --username $DOCKER_LOGIN --password-stdin
+      - run:
+          name: Publish to Docker Hub
+          command: |
+            docker image push kelvintaywl/test-splitting-debugger:latest
 
 workflows:
   on-commit:
